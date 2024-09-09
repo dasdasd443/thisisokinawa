@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./burger.css";
+import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="px-[20px] w-[100%] z-[999] h-[50px] fixed bg-[#FFFAF0] pt-[5px] flex justify-between items-center border-b-[1px] opacity-[0.9] shadow-md">
+          <Link href="/">This is Okinawa</Link>
+          <div className="menu-btn-new">
+            <div className="burger-top">
+              <div className="burger-icon burger-icon-top"></div>
+            </div>
+          </div>
+        </div>
+        <div className="relative pt-[50px]">
+          {children}
+        </div>
       </body>
     </html>
   );
