@@ -4,24 +4,23 @@ import {motion } from 'framer-motion';
 
 const leafVariants = {
     animate: {
-      rotate: [0, 5, -5, 0],
-      translateX: [-5,0 ,5, -5],
+      rotate: [0, 5, 0],
+    //   translateX: [-5,0 ,5, -5],
       transition: {
         repeat: Infinity,
-        ease: "linear",
-        duration: 10,
+        ease: "easeInOut",
+        duration: 14,
       }
     }
   }
 
 const rightLeafVariants = {
     animate: {
-      rotate: [0, 5, -5, 0],
-      translateX: [-5,0 ,5, -5],
+      rotate: [0, 5, 0],
       transition: {
         repeat: Infinity,
-        ease: "linear",
-        duration: 6,
+        ease: "easeInOut",
+        duration: 10,
       }
     }
   }
@@ -38,7 +37,7 @@ export default function InitialBanner() {
                 priority
             />
             <motion.div
-                className="absolute top-[-10vw] left-[-10vw] origin-top-right"
+                className="absolute top-[-10vw] left-[-10vw] origin-top-left"
                 variants={leafVariants}
                 animate="animate"
             >
@@ -55,7 +54,7 @@ export default function InitialBanner() {
             <motion.div 
             variants={rightLeafVariants}
             animate="animate"
-            className="absolute top-[-10vw] right-[-10vw]">
+            className="absolute top-[-10vw] right-[-10vw] origin-top-right">
                 <Image
                     className="dark:invert  w-[30vw]"
                     src="/coconut-leaf-right.png"
